@@ -1,0 +1,22 @@
+<%- include('./includes/header.ejs') %>
+<div class="container">
+    <div class="row">
+        <h1 class="display-4  center">Les plus belles cartes du mois</h1>
+        <div class="row row-cols-1 row-cols-md-5 g-5">
+                <% for (card of cardsUser) { %>
+                    <div class="card me-5" style="width: 18rem;">
+                        <img src="<%=card.img%>" class="card-img-top mt-2" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><%=card.tittle_card%></h5>
+                            <p class="card-text"><%=card.description_card%></p>
+                            <p class="card-text">By <%=card.pseudo%></p>
+                            <p class="card-text">vote: <%=card.vote%></p>
+                            <a href="#" class="btn btn-dark">Voter</a>
+                            </div>
+                        </div>
+                <%}%>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('./includes/footer.ejs') %>

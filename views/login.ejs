@@ -1,0 +1,26 @@
+<%- include('./includes/header.ejs') %>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="position-absolute top-50 start-50 translate-middle">
+            <form class="row g-3" method="post">
+            <div class="col-12">
+                <h2>Connexion</h2>
+            </div>
+            <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail"  name="email" required>
+            </div>
+            <div class="col-12">
+                <label for="password" class="form-label">Mot de passe</label>
+                <input type="password" class="form-control" id="inputPassword"     name="password"     required>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-dark">Se connecter</button>
+            </div>
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+<%- include('./includes/footer.ejs') %>

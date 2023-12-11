@@ -1,0 +1,42 @@
+<%- include('./includes/header.ejs') %> 
+<section>
+    <div class="form-outline" data-mdb-input-init>
+        <input type="search" id="form1" class="form-control" placeholder="Rechercher une carte dans la ban-list " aria-label="Search" />
+    </div>
+    <div class="container mt-5">
+    <div class="mb-5" >
+        <button type="button" class="btn btn-dark" id="all">Tout</button>
+        <button type="button" class="btn btn-dark" id="spell-card-button">Magie</button>
+        <button type="button" class="btn btn-dark" id="trap-card-button">Piege</button>
+        <button type="button" class="btn btn-dark" id="monster">Monstre</button>
+        <button type="button" class="btn btn-dark" id="fusion">Fusion</button>
+        <button type="button" class="btn btn-dark" id="synchro">Synchro</button>
+        <button type="button" class="btn btn-dark" id="xyz">XYZ</button>
+        <button type="button" class="btn btn-dark" id="link">Link</button>
+    </div>
+        <div class="row row-cols-1 row-cols-md-5 g-5">
+            <% for (card of responseBody.data) { %>
+                <article class="search-therme ">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="<%= card.card_images[0].image_url_small %>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= card.name %></h5>
+                            <p class="card-text text-truncate"><%= card.desc %></p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><%= card.banlist_info.ban_tcg %></li>
+                            <li class="list-group-item cardType"><%= card.type %></li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="<%= card.ygoprodeck_url %>" class="card-link" target="_blank">Plus d'info</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <% } %>
+        </div>
+    </div>
+</section>
+<script src="script/search_bar.js"></script>
+<%- include('./includes/footer.ejs') %>
